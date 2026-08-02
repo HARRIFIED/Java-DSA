@@ -1,23 +1,28 @@
 
 public class BinarySearch {
-    public boolean solution(int[] nums, int searchValue) {
+    public int solution(int[] manifestCodes, int requestedCode) {
+        if (manifestCodes.length < 1) {
+            return -1;
+        }
         int left = 0;
-        int right = nums.length - 1;
-
-        if (nums[left] == searchValue) return true;
-        if (nums[right] == searchValue) return true;
-
-        while (left < right) {
-            int mid = (left + right) / 2;
-            if (nums[mid] == searchValue) return true;
-            if (nums[mid] > searchValue) {
-                right = mid - 1;
+        int right = manifestCodes.length - 1;
+        if (manifestCodes[left] == requestedCode) {
+            return left;
+        } 
+        if (manifestCodes[right] == requestedCode) {
+            return right;
+        }
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (manifestCodes[mid] == requestedCode) {
+                return mid;
             }
-            if (nums[mid] < searchValue) {
+            if (manifestCodes[mid] > requestedCode) {
+                right = mid - 1;
+            } else if (manifestCodes[mid] < requestedCode) {
                 left = mid + 1;
             }
-        }
-
-        return false;
+        } 
+        return -1;
     }
 }
