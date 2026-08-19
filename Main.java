@@ -1,12 +1,17 @@
 
-import java.util.Arrays;
+import java.util.*;
 
 class Main {
     public static void main(String[] args) {
-        int num = 4;
-        // IsSplitable isSplitable = new IsSplitable();
-        // System.out.println(isSplitable.isSplitOnlyBatch(num));
-        Fibonacci fibonacci = new Fibonacci();
-        System.out.println(fibonacci.solution(num));
+        LinkedList linkedList = new LinkedList("Gratitude");
+        linkedList.append("Halo");
+        linkedList.append("boxx");
+        linkedList.append("Thinking Out Loud");
+        linkedList.append("Gratitude");
+        linkedList.append("Gratitude");
+        linkedList.append("2002");
+        System.out.println("Before ->" + linkedList.traverseList());
+        // linkedList.reverse();
+        System.out.println("After2 ->" + linkedList.findMiddle());
     }
 }
